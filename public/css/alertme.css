@@ -51,6 +51,11 @@
     height : 30px;
   }
   
+    .target-application{
+    width : 180px;
+    float : left
+  }
+  
   .target-host{
     width : 180px;
     float : left

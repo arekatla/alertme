@@ -11,7 +11,7 @@ exports.init = function(db) {
 exports.save = function(req, res) {
 	var host = req.body.host;
 	if(host && host.host && host.port){
-		var hostJson = {host : host.host, port : host.port, config : host.config, state : {}};
+		var hostJson = {application : host.application,host : host.host, port : host.port, config : host.config, state : {}};
 		hostsDao.save(hostJson, function(error, data){
 			if(error){
 				res.send({error : error});
@@ -27,6 +27,7 @@ exports.update = function(req, res) {
 	if(host._id){
 		hostsDao.findById(host._id, function(error, result){
 			if(result){
+				results.application = host.application;
 				result.host = host.host;
 				result.port = host.port;
 				result.config = host.config;

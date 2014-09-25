@@ -18,7 +18,7 @@ var updatehostsJson = function() {
 		var hosts = [];
 		if (result && result != null) {
 			for(var i=0; i<result.length; i++){
-				hosts.push({host : result[i].host, port : result[i].port, id : result[i]._id, enabled : result[i].config.enabled});
+				hosts.push({application : results[i].application, host : result[i].host, port : result[i].port, id : result[i]._id, enabled : result[i].config.enabled});
 			}
 			hostsJson = {hosts : hosts};
 			jf.writeFile("./config/hosts.json", hostsJson, function(err) {
@@ -38,7 +38,7 @@ exports.updateJson = function(){
 		var hosts = [];
 		if (result && result != null) {
 			for(var i=0; i<result.length; i++){
-				hosts.push({host : result[i].host, port : result[i].port, id : result[i]._id, enabled : result[i].config.enabled});
+				hosts.push({application : results[i].application ,host : result[i].host, port : result[i].port, id : result[i]._id, enabled : result[i].config.enabled});
 			}
 			hostsJson = {hosts : hosts};
 			jf.writeFile("./config/hosts.json", hostsJson, function(err) {

@@ -45,7 +45,7 @@ function homeController($scope, $location, host, $timeout) {
 					alert_to : "", warning_if_takes_more_than : "", method : "",
 						url : "", expectedStatuscode : "", expectedData : ""};
 			
-			$scope.selectedHost  = {host : "", port : "", config : config, state : {}};
+			$scope.selectedHost  = {application : "" , host : "", port : "", config : config, state : {}};
 		} else if(action == "edit"){
 			$scope.selectedHost = host;
 		}

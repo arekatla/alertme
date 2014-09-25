@@ -7,6 +7,7 @@
       table.table.table-bordered
         thead
           tr
+            th Application
             th Host
             th Port
             th Status
@@ -18,6 +19,7 @@
             th Delete
         tbody
           tr(ng-repeat='host in hosts')
+            td {{host.application}}
             td {{host.host}}
             td {{host.port}}
             td
@@ -37,6 +39,10 @@
               
 #hostModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
     .modal-body
+    	.modal-box
+          .modal-label Application
+          .modal-text
+            input(type='text', value='', name='application', placeholder='Application', ng-model='selectedHost.application', style='width : 300px;')      
         .modal-box
           .modal-label Host
           .modal-text
